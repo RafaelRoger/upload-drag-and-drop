@@ -1,0 +1,142 @@
+
+* {
+    padding: 0;
+    margin:  0;
+    box-sizing: border-box;
+    font-family: "Popins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #d4d0cf;
+}
+
+.drag-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+    width: 700px;
+    background: #fff;
+    padding: 35px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    box-shadow: 7px 7px 12px rgb(0 0 0 / 5%);
+}
+.drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.drag-area.active {
+    border: 2px solid #fff;
+}
+
+.drag-area .icon{
+    font-size: 100px;
+    color: #000;
+}
+
+.drag-area header {
+    font-size: 30px;
+    font-weight: 500;
+    color: #000;
+}
+
+.drag-area span {
+    font-size: 25px;
+    font-weight: 500;
+    color: #000;
+    margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    background-color: #151515;
+    opacity: .9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spiner{
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+
+.spiner::before,
+.spiner::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.spiner:before{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, #ffa600 0%, #2ca3b3 100%);
+    animation: spin .5s infinite linear;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spiner:after{
+    width: 90%;
+    height: 90%;
+    background-color: #151515;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.percent{
+    color: #999;
+    font-size: 25px;
+    font-weight: 400;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.preload {
+    width: 100%;
+    height: 100%;
+    background: #000 url('http://127.0.0.1:8000/amalie-steiness.gif') no-repeat center center;
+    opacity: .9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
