@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.conf import settings
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.conf import settings
 import speech_recognition 
 import subprocess
 

@@ -66,7 +66,7 @@ dropArea.addEventListener("drop", (event) => {
             dadosForm.append("file", file)
             post(dadosForm);
         } else {
-            alert('the audio must to have a max of 100MB');
+            alert('File size exceeds the maximum limit of 100MB');
         }
     } else {
         alert('This is not a audio');
